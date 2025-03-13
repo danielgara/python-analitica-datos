@@ -58,6 +58,7 @@
 | `df["col"] = df["col"] * 2` | Modifica todos los valores en la columna `"col"`, duplicándolos. | `No aplica` |
 | `df = df.drop(0, axis=0)` | Borra la fila con índice `0` del DataFrame. | `No aplica` |
 | `df = df.drop(columns="col")` | Borra la columna `"col"` del DataFrame. | `No aplica` |
+| `df = pd.concat([df, df1], axis=1)` | Modifica `df`, ahora será un DataFrame concatenado de `df` más `df1`. `axis=1` indica que la concatenación se realiza por columnas, basado en los índices de filas de ambos DataFrames. | No aplica |
 
 ### 3.3. Bases Series: Lectura, Impresión y Retorno de Información
 
