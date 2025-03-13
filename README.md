@@ -56,10 +56,10 @@
 | `df.loc[0, "col"] = 5` | Modifica el valor almacenado en la columna `"col"`, en la fila con índice `0`, y lo reemplaza por `5`. Si `"col"` no existe, la crea. | `No aplica` |
 | `df["col"] = "Hola"`   | Modifica todos los valores en la columna `"col"` y los reemplaza por `"Hola"`. Si `"col"` no existe, la crea con el valor `"Hola"`. | `No aplica` |
 | `df["col"] = df["col"] * 2` | Modifica todos los valores en la columna `"col"`, duplicándolos. | `No aplica` |
-| `df["col"] = np.round(df["col"], 2)` | Modifica todos los valores en la columna `"col"` del DataFrame redondeando los decimales a dos cifras. | No aplica |
+| `df["col"] = np.round(df["col"], 2)` | Modifica todos los valores en la columna `"col"` del DataFrame redondeando los decimales a dos cifras. | `No aplica` |
 | `df = df.drop(0, axis=0)` | Borra la fila con índice `0` del DataFrame. | `No aplica` |
 | `df = df.drop(columns="col")` | Borra la columna `"col"` del DataFrame. | `No aplica` |
-| `df = pd.concat([df, df1], axis=1)` | Modifica `df`, ahora será un DataFrame concatenado de `df` más `df1`. `axis=1` indica que la concatenación se realiza por columnas, basado en los índices de filas de ambos DataFrames. | No aplica |
+| `df = pd.concat([df, df1], axis=1)` | Modifica `df`, ahora será un DataFrame concatenado de `df` más `df1`. `axis=1` indica que la concatenación se realiza por columnas, basado en los índices de filas de ambos DataFrames. | `No aplica` |
 
 ### 3.3. Bases Series: Lectura, Impresión y Retorno de Información
 
