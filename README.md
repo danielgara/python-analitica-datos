@@ -89,8 +89,6 @@
 | `df.isna()`            | Retorna un `DataFrame` booleano con `True` en posiciones donde hay `NaN`. | `DataFrame` |
 | `s.isna()`             | Retorna una `Series` booleana con `True` en posiciones donde hay `NaN`. | `Series` |
 | `df = df.fillna(0)`    | Reemplaza todos los valores `NaN` en `df` con `0`. | `No aplica` |
-| `df["col"] = df["col"].fillna(mean)` | Reemplaza `NaN` en `"col"` con el dato almacenado en `mean` (promedio). | `No aplica` |
-| `df["col"] = df["col"].fillna(idxmax)` | Reemplaza `NaN` en `"col"` con el dato más frecuente (`idxmax`). | `No aplica` |
 | `df = df.dropna(axis=0)` | Elimina todas las filas del `DataFrame` que contienen `NaN`. `axis=0` borra filas, `axis=1` borra columnas. | `No aplica` |
 | `df = df.dropna(subset=["col"])` | Elimina solo las filas donde `"col"` tiene `NaN`. | `No aplica` |
 
@@ -99,10 +97,8 @@
 | **Función o elemento**  | **Descripción** |
 |-------------------------|----------------|
 | `df["col"] = df["col"].replace(np.NaN, "Hola")` | Reemplaza los valores `NaN` en `"col"` de `df` con un valor estándar (ej: `"Hola"`). |
-| `mean = df["col"].astype("float").mean()` | Calcula el promedio de la columna `"col"`. |
-| `df["col"] = df["col"].replace(np.NaN, mean)` | Reemplaza los valores `NaN` en `"col"` de `df` con el promedio de la columna. |
-| `idxmax = df["col"].value_counts().idxmax()` | Encuentra el valor más frecuente de la columna `"col"`. |
-| `df["col"] = df["col"].replace(np.NaN, idxmax)` | Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
+| `mean = df["col"].astype("float").mean()` <br> `df["col"] = df["col"].replace(np.NaN, mean)` | Calcula el promedio de la columna `"col"`. Y Reemplaza los valores `NaN` en `"col"` de `df` con el promedio de la columna. |
+| `idxmax = df["col"].value_counts().idxmax()` <br> `df["col"] = df["col"].replace(np.NaN, idxmax)` | Encuentra el valor más frecuente de la columna `"col"`. Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
 
 ### 4.3. Formateo de Datos
 
@@ -111,3 +107,4 @@
 | `df["col"] = df["col"].replace("viejo", "nuevo")` | Reemplaza los valores `"viejo"` en `"col"` de `df` con `"nuevo"`. |
 | `df = df.rename(columns={"viejo":"nuevo"})` | Cambia el nombre de la columna `"viejo"` a `"nuevo"` en `df`. |
 | `df["col"] = df["col"].astype("float")` | Convierte los valores de la columna `"col"` al tipo de dato `"float"`. |
+
