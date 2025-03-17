@@ -110,3 +110,17 @@
 | `df = df.rename(columns={"viejo":"nuevo"})` | Cambia el nombre de la columna `"viejo"` a `"nuevo"` en `df`. |
 | `df["col"] = df["col"].astype("float")` | Convierte los valores de la columna `"col"` al tipo de dato `"float"`. |
 
+### 4.4 Normalización
+
+| **Función o elemento** | **Descripción** |
+|------------------------|----------------|
+| `df["col_normalizada"] = df["col"]/df["col"].max()` | Crea una columna normalizada llamada `"col_normalizada"` utilizando **Simple Feature Scaling**. Este método escala en función del valor máximo y no garantiza un rango fijo de los datos. |
+| `df["col_normalizada"] = (df["col"] - df["col"].min()) / (df["col"].max() - df["col"].min())` | Crea una columna normalizada llamada `"col_normalizada"` utilizando **Min-Max Scaling**. Este método escala en un rango fijo (0 a 1). |
+
+### 4.5 Agrupamiento
+
+| **Función o elemento** | **Descripción** |
+|------------------------|----------------|
+| `bins = np.linspace(df["col"].min(), df["col"].max(), num=4)` <br><br> `etiquetas = ["Grupo 1", "Grupo 2", "Grupo 3"]` <br><br> `df["col_agrupada"] = pd.cut(df["col"], bins=bins, labels=etiquetas, include_lowest=True)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Uniforme**. Este método divide los datos en intervalos de igual tamaño. |
+| `etiquetas = ["Q1", "Q2", "Q3", "Q4"]` <br><br> `df["col_agrupada"] = pd.qcut(df["col"], q=4, labels=etiquetas)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Basado en Frecuencia**. Este método crea “bins” que contienen aproximadamente la misma cantidad de datos. |
+| `bins = [0, 100, 200, 300]` <br> `etiquetas = ["Baja", "Media", "Alta"]` <br><br> `df["col_agrupada"] = pd.cut(df["col"], bins=bins, labels=etiquetas, include_lowest=True)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Manual**. Este método crea “bins” dependiendo de rangos personalizados basados en reglas de negocio. |
