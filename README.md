@@ -103,6 +103,7 @@
 | `df["col"] = df["col"].replace(np.NaN, "Hola")` | Reemplaza los valores `NaN` en `"col"` de `df` con un valor estándar (ej: `"Hola"`). |
 | `mean = df["col"].astype("float").mean()` <br> `df["col"] = df["col"].replace(np.NaN, mean)` | Calcula el promedio de la columna `"col"`. Y Reemplaza los valores `NaN` en `"col"` de `df` con el promedio de la columna. |
 | `idxmax = df["col"].value_counts().idxmax()` <br> `df["col"] = df["col"].replace(np.NaN, idxmax)` | Encuentra el valor más frecuente de la columna `"col"`. Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
+| `valmax = df["col"].mode()[0]` <br> `df["col"] = df["col"].replace(np.NaN, valmax)` | Encuentra el valor más frecuente de la columna `"col"` (otra forma). Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
 
 ### 4.3. Formateo de Datos
 
