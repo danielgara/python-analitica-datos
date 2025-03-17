@@ -1,3 +1,5 @@
+
+
 # Hoja de Trucos – Curso Python: Análisis y Manipulación de Datos
 
 ## 1. INTRODUCCIÓN
@@ -124,3 +126,9 @@
 | `bins = np.linspace(df["col"].min(), df["col"].max(), num=4)` <br><br> `etiquetas = ["Grupo 1", "Grupo 2", "Grupo 3"]` <br><br> `df["col_agrupada"] = pd.cut(df["col"], bins=bins, labels=etiquetas, include_lowest=True)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Uniforme**. Este método divide los datos en intervalos de igual tamaño. |
 | `etiquetas = ["Q1", "Q2", "Q3", "Q4"]` <br><br> `df["col_agrupada"] = pd.qcut(df["col"], q=4, labels=etiquetas)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Basado en Frecuencia**. Este método crea “bins” que contienen aproximadamente la misma cantidad de datos. |
 | `bins = [0, 100, 200, 300]` <br> `etiquetas = ["Baja", "Media", "Alta"]` <br><br> `df["col_agrupada"] = pd.cut(df["col"], bins=bins, labels=etiquetas, include_lowest=True)` | Crea una columna agrupada llamada `"col_agrupada"` utilizando **Binning Manual**. Este método crea “bins” dependiendo de rangos personalizados basados en reglas de negocio. |
+
+### 4.6 Datos Categóricos
+
+| **Función o elemento** | **Descripción** |
+|------------------------|----------------|
+| `df_dummy_col = pd.get_dummies(df["col"], prefix="col", dtype=int)` <br><br> `df = pd.concat([df, df_dummy_col], axis=1)` | Añade una columna booleana (0 o 1) por cada valor único en `"col"`, con el prefijo `"col"`. Este método se denomina **One-Hot Encoding**. |
