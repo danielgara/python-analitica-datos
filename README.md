@@ -8,10 +8,12 @@
 
 | **Identificador** | **Significado**                          |
 |------------------|--------------------------------------|
-| `pd`            | Representa la librería **Pandas**    |
-| `np`            | Representa la librería **NumPy**     |
-| `df`            | Representa una variable que contiene un **DataFrame** |
-| `s`             | Representa una variable que contiene una **Series** |
+| `pd`             | Alias común para **Pandas**, una librería para manipulación y análisis de datos      |
+| `np`             | Alias común para **NumPy**, una librería para operaciones numéricas y matrices       |
+| `df`             | Nombre común para una variable que contiene un **DataFrame** de Pandas               |
+| `s`              | Nombre común para una variable que contiene una **Series** de Pandas                 |
+| `plt`            | Alias común para **Matplotlib.pyplot**, usada para crear gráficos                    |
+| `sns`            | Alias común para **Seaborn**, una librería de visualización estadística basada en Matplotlib |
 
 ## 2. RECOLECCIÓN Y LECTURA DE DATOS
 
