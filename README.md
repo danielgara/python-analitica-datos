@@ -133,3 +133,4 @@
 | **Función o elemento** | **Descripción** |
 |------------------------|----------------|
 | `df_dummy_col = pd.get_dummies(df["col"], prefix="col", dtype=int)` <br><br> `df = pd.concat([df, df_dummy_col], axis=1)` | Añade una columna booleana (0 o 1) por cada valor único en `"col"`, con el prefijo `"col"`. Este método se denomina **One-Hot Encoding**. |
+| `df = pd.get_dummies(df, columns=['col'], prefix="col", dtype=int)` | Otra forma más corta de **One-Hot Encoding**. |
