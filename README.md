@@ -151,3 +151,22 @@
 | `s.std()`                          | Retorna la **desviación estándar muestral** de la Series, mostrando cuánto varían los datos respecto a la media. | Escalar |
 | `df.describe()`                    | Retorna estadísticas descriptivas de las columnas numéricas.                                  | DataFrame    |
 | `df.describe(include=[object])`   | Retorna estadísticas descriptivas de las columnas tipo texto `object`.                         | DataFrame    |
+
+### 5.2. Visualización de datos
+
+#### 5.2.1. Distribución Categóricas - Barras
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("05-auto.csv")
+s_conteo_marcas = df["marca"].value_counts()
+
+s_conteo_marcas.plot(kind='bar')
+plt.xlabel("Marca")
+plt.ylabel("Cantidad de Autos")
+plt.title("Distribución de Autos por Marca")
+plt.show()
+```
+<img src="https://github.com/user-attachments/assets/94026d38-0ef5-4f09-9276-984b99753eef" width="300">
