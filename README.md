@@ -136,3 +136,18 @@
 | `df = pd.get_dummies(df, columns=['col'], prefix="col", dtype=int)` | Otra forma más corta de **One-Hot Encoding**. |
 | `from sklearn.preprocessing import LabelEncoder` <br><br> `le = LabelEncoder()` <br><br> `df['col_codificada'] = le.fit_transform(df['col'])` | Añade una columna de categorías basada en números enteros sin ningún orden específico (sólo índices). Este método se denomina **Label Encoding**. |
 | `from sklearn.preprocessing import OrdinalEncoder` <br><br> `orden = [['val1', 'val2']] ` <br><br> `oe = OrdinalEncoder(categories=orden)` <br><br> `df['col_codificada'] = oe.fit_transform(df[['col']]).astype(int)` | Añade una columna de categorías basada en números enteros con un orden específico (`val1` el menor, `val2` el mayor). Este método se denomina **Ordinal Encoding**. |
+
+## 5. ANÁLISIS EXPLORATORIO DE DATOS
+
+### 5.1. Estadísticas Descriptivas
+
+| Función o elemento                  | Descripción                                                                                   | Tipo retorno |
+|------------------------------------|-----------------------------------------------------------------------------------------------|--------------|
+| `s.mean()`                         | Retorna el promedio de los valores de la Series.                                               | Escalar      |
+| `s.median()`                       | Retorna la mediana de la Series, es decir, el valor que está en el centro al ordenar.         | Escalar      |
+| `s.mode()[0]`                      | Retorna la moda de la Series, el valor que más se repite (con `[0]` tomamos el primero si hay varias). | Escalar |
+| `s.max() - s.min()`                | Retorna el rango de la Series, es decir, la diferencia entre el valor máximo y el mínimo.     | Escalar      |
+| `s.var()`                          | Retorna la varianza muestral de la Series, midiendo la dispersión de los datos.               | Escalar      |
+| `s.std()`                          | Retorna la desviación estándar muestral de la Series, mostrando cuánto varían los datos respecto a la media. | Escalar |
+| `df.describe()`                    | Retorna estadísticas descriptivas de las columnas numéricas.                                  | DataFrame    |
+| `df.describe(include=[object])`   | Retorna estadísticas descriptivas de las columnas tipo texto `object`.                         | DataFrame    |
