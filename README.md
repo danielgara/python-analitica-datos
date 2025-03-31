@@ -147,7 +147,7 @@
 | `s.median()`                       | Retorna la mediana de la Series, es decir, el valor que está en el centro al ordenar.         | Escalar      |
 | `s.mode()[0]`                      | Retorna la moda de la Series, el valor que más se repite (con `[0]` tomamos el primero si hay varias). | Escalar |
 | `s.max() - s.min()`                | Retorna el rango de la Series, es decir, la diferencia entre el valor máximo y el mínimo.     | Escalar      |
-| `s.var()`                          | Retorna la varianza muestral de la Series, midiendo la dispersión de los datos.               | Escalar      |
-| `s.std()`                          | Retorna la desviación estándar muestral de la Series, mostrando cuánto varían los datos respecto a la media. | Escalar |
+| `s.var()`                          | Retorna la **varianza muestral** de la Series, midiendo la dispersión de los datos.               | Escalar      |
+| `s.std()`                          | Retorna la **desviación estándar muestral** de la Series, mostrando cuánto varían los datos respecto a la media. | Escalar |
 | `df.describe()`                    | Retorna estadísticas descriptivas de las columnas numéricas.                                  | DataFrame    |
 | `df.describe(include=[object])`   | Retorna estadísticas descriptivas de las columnas tipo texto `object`.                         | DataFrame    |
