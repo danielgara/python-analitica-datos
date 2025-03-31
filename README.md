@@ -170,3 +170,116 @@ plt.title("Distribución de Autos por Marca")
 plt.show()
 ```
 <img src="https://github.com/user-attachments/assets/94026d38-0ef5-4f09-9276-984b99753eef" width="300">
+
+#### 5.2.2. Distribución Categóricas - Pastel
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("05-auto.csv")
+s_conteo_marcas = df["marca"].value_counts()
+
+plt.figure(figsize=(8, 8))
+s_conteo_marcas.plot(kind='pie', autopct='%1.1f%%')
+plt.title("Distribución de Autos por Marca")
+plt.ylabel("") # ocultar etiqueta del eje Y
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/66f31f83-4505-40b0-b6c1-bd9882b0e202" width="300">
+
+#### 5.2.3. Distribución Numéricas - Histograma
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("05-auto.csv")
+s_potencia_hp = df["potencia_hp"]
+
+s_potencia_hp.plot(kind='hist', bins=3)
+plt.xlabel("Potencia HP")
+plt.ylabel("Cantidad de Autos")
+plt.title("Distribución de Autos por Potencia HP")
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/03244664-c228-493a-9476-b0cc7981a2dd" width="300">
+
+#### 5.2.4. Distribución Numéricas - Boxplot - Con limites
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+alturas = [140, 150, 155, 160, 165, 170, 175, 220]
+
+Q1 = np.percentile(alturas, 25)
+Q2 = np.median(alturas)
+Q3 = np.percentile(alturas, 75)
+IQR = Q3 - Q1
+limite_inferior = Q1 - 1.5 * IQR
+limite_superior = Q3 + 1.5 * IQR
+
+sns.boxplot(y=alturas)
+plt.axhline(limite_superior, color='purple', linestyle='--')
+plt.axhline(limite_inferior, color='purple', linestyle='--')
+plt.ylabel("Altura")
+plt.title("Boxplot de Alturas")
+plt.grid(axis='x')
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/ca1c8df0-9510-4127-af1a-addbd4bb56a4" width="300">
+
+#### 5.2.5. Distribución Numéricas - Boxplot
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("05-auto.csv")
+s_consumo_ciudad_kpg = df["consumo_ciudad_kpg"]
+
+sns.boxplot(y=s_consumo_ciudad_kpg, color="lightblue")
+plt.xlabel("Consumo Ciudad kpg")
+plt.title("Diagrama de Caja para Consumo Ciudad kpg")
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/14f3778a-631a-4f27-920c-a5b53e5e692d" width="300">
+
+#### 5.2.6. Relaciones entre Variables - Scatter plot
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("05-auto.csv")
+
+sns.scatterplot(data=df, x="tamano_motor", y="precio")
+plt.title("Relación entre Tamaño Motor y Precio")
+plt.grid(True)
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/f4665545-cb05-45e8-b7fa-9c0aed63b953" width="300">
+
+#### 5.2.7. Relaciones entre Variables - Boxplot
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("05-auto.csv")
+
+sns.boxplot(data=df, x="ubicacion_motor", y="precio")
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/77a8ab23-60b8-4fee-95e8-6302c73be77b" width="300">
