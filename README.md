@@ -285,3 +285,15 @@ plt.show()
 ```
 
 <img src="https://github.com/user-attachments/assets/77a8ab23-60b8-4fee-95e8-6302c73be77b" width="300">
+
+### 5.3. Agrupamiento
+
+#### 5.3.1. GroupBy
+
+| Función o elemento                         | Descripción                                                              | Tipo retorno |
+|-------------------------------------------|-------------------------------------------------------------------------|--------------|
+| `dfgb = df.groupby("col")`                | Crea una variable DataFrameGroupBy que agrupa el DataFrame por la columna `"col"` | No aplica    |
+| `df_grupo = dfgb.get_group("grupo")`      | Crea una variable DataFrame con los datos del grupo `"grupo"`             | No aplica    |
+| `dfgb.mean()`                             | Retorna un DataFrame o Series con los promedios de cada grupo            | Escalar      |
+| `dfgb.sum()`                              | Retorna un DataFrame o Series con la suma de cada grupo                  | Escalar      |
+
