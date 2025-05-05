@@ -294,6 +294,28 @@ plt.show()
 |-------------------------------------------|-------------------------------------------------------------------------|--------------|
 | `dfgb = df.groupby("col")`                | Crea una variable DataFrameGroupBy que agrupa el DataFrame por la columna `"col"` | No aplica    |
 | `df_grupo = dfgb.get_group("grupo")`      | Crea una variable DataFrame con los datos del grupo `"grupo"`             | No aplica    |
-| `dfgb.mean()`                             | Retorna un DataFrame o Series con los promedios de cada grupo            | Escalar      |
-| `dfgb.sum()`                              | Retorna un DataFrame o Series con la suma de cada grupo                  | Escalar      |
+| `dfgb.mean()`                             | Retorna un DataFrame con los promedios de cada grupo            | DataFrame      |
+| `dfgb.sum()`                              | Retorna un DataFrame con la suma de cada grupo                  | DataFrame      |
 
+#### 5.3.2. Pivot
+
+```python
+df_pivot = df.pivot(index="marca", columns="num_puertas", values="precio")
+```
+
+Crea una tabla pivotada reorganizando el DataFrame, usando `"marca"` como índice, `"num_puertas"` como columnas y `"precio"` como valores. 
+**Nota:** esta función solo reorganiza los datos, sin agregación, y sin permitir valores duplicados.
+
+#### 5.3.3. Pivot_table
+
+```python
+df_pivot = df.pivot_table(
+  index="marca",
+  columns="numero_puertas",
+  values="precio",
+  aggfunc="mean"
+)
+```
+
+Crea una tabla pivotada usando `"marca"` como índice, `"num_puertas"` como columnas, y `"precio"` promedio como valores (utilizando la función de agregación `"mean"`).
+**Nota:**  esta función permite agrupar datos utilizando funciones de agregación, y permite valores duplicados.
