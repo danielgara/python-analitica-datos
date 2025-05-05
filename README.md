@@ -319,3 +319,33 @@ df_pivot = df.pivot_table(
 
 Crea una tabla pivotada usando `"marca"` como índice, `"num_puertas"` como columnas, y `"precio"` promedio como valores (utilizando la función de agregación `"mean"`).
 **Nota:**  esta función permite agrupar datos utilizando funciones de agregación, y permite valores duplicados.
+
+### 5.4. Correlaciones
+
+#### 5.4.1. Matriz de Correlación
+
+```python
+df[["tamano_motor","precio"]].corr()
+```
+
+Calcula la matriz de correlación entre las columnas `"tamano_motor"` y `"precio"`.
+
+#### 5.4.2. Heatmap - Matriz de Correlación
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("05-auto.csv")
+df_numerico = df.select_dtypes(include=['number'])
+df_corr = df_numerico.corr()
+
+plt.figure(figsize=(12, 12))
+sns.heatmap(df_corr, annot=True, cmap='coolwarm', fmt=".2f")
+plt.title("Matriz de Correlación")
+plt.tight_layout()
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/613a2007-9cf5-427f-8a01-8cf841e900ec" width="300">
