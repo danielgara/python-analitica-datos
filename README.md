@@ -349,3 +349,19 @@ plt.show()
 ```
 
 <img src="https://github.com/user-attachments/assets/613a2007-9cf5-427f-8a01-8cf841e900ec" width="300">
+
+#### 5.4.3. Regplot
+
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("05-auto.csv")
+
+sns.regplot(x="tamano_motor", y="precio", data=df)
+plt.title("Regresión lineal con banda de confianza")
+plt.show()
+```
+
+<img src="https://github.com/user-attachments/assets/4bb6d1ca-3a87-4ba2-bd8c-d7e38c7e0226" width="300">
