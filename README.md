@@ -92,7 +92,7 @@
 
 | **Función o elemento**  | **Descripción**  | **Tipo de retorno** |
 |-------------------------|-----------------|---------------------|
-| `df = df.replace("?", np.NaN)` | Reemplaza los valores `"?"` en `df` con `NaN` (datos faltantes). | `No aplica` |
+| `df = df.replace("?", np.nan)` | Reemplaza los valores `"?"` en `df` con `NaN` (datos faltantes). | `No aplica` |
 | `df.isna()`            | Retorna un `DataFrame` booleano con `True` en posiciones donde hay `NaN`. | `DataFrame` |
 | `df.isna().sum()`             | Retorna una `Series` con las sumas de los valores nulos de cada columna de `df`. | `Series` |
 | `s.isna()`             | Retorna una `Series` booleana con `True` en posiciones donde hay `NaN`. | `Series` |
@@ -105,10 +105,10 @@
 
 | **Función o elemento**  | **Descripción** |
 |-------------------------|----------------|
-| `df["col"] = df["col"].replace(np.NaN, "Hola")` | Reemplaza los valores `NaN` en `"col"` de `df` con un valor estándar (ej: `"Hola"`). |
-| `mean = df["col"].astype("float").mean()` <br><br> `df["col"] = df["col"].replace(np.NaN, mean)` | Calcula el promedio de la columna `"col"`. Y Reemplaza los valores `NaN` en `"col"` de `df` con el promedio de la columna. |
-| `idxmax = df["col"].value_counts().idxmax()` <br><br> `df["col"] = df["col"].replace(np.NaN, idxmax)` | Encuentra el valor más frecuente de la columna `"col"`. Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
-| `valmax = df["col"].mode()[0]` <br><br> `df["col"] = df["col"].replace(np.NaN, valmax)` | Encuentra el valor más frecuente de la columna `"col"` (otra forma). Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
+| `df["col"] = df["col"].replace(np.nan, "Hola")` | Reemplaza los valores `NaN` en `"col"` de `df` con un valor estándar (ej: `"Hola"`). |
+| `mean = df["col"].astype("float").mean()` <br><br> `df["col"] = df["col"].replace(np.nan, mean)` | Calcula el promedio de la columna `"col"`. Y Reemplaza los valores `NaN` en `"col"` de `df` con el promedio de la columna. |
+| `idxmax = df["col"].value_counts().idxmax()` <br><br> `df["col"] = df["col"].replace(np.nan, idxmax)` | Encuentra el valor más frecuente de la columna `"col"`. Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
+| `valmax = df["col"].mode()[0]` <br><br> `df["col"] = df["col"].replace(np.nan, valmax)` | Encuentra el valor más frecuente de la columna `"col"` (otra forma). Y  Reemplaza los valores `NaN` en `"col"` con el valor más frecuente de la columna. |
 
 ### 4.3. Formateo de Datos
 
