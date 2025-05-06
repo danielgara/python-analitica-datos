@@ -94,6 +94,7 @@
 |-------------------------|-----------------|---------------------|
 | `df = df.replace("?", np.NaN)` | Reemplaza los valores `"?"` en `df` con `NaN` (datos faltantes). | `No aplica` |
 | `df.isna()`            | Retorna un `DataFrame` booleano con `True` en posiciones donde hay `NaN`. | `DataFrame` |
+| `df.isna().sum()`             | Retorna una `Series` con las sumas de los valores nulos de cada columna de `df`. | `Series` |
 | `s.isna()`             | Retorna una `Series` booleana con `True` en posiciones donde hay `NaN`. | `Series` |
 | `s.isna().sum()`             | Retorna la suma de los valores nulos de la `Series`. | `Escalar` |
 | `df = df.fillna(0)`    | Reemplaza todos los valores `NaN` en `df` con `0`. | `No aplica` |
